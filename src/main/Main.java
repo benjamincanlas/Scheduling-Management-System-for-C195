@@ -7,48 +7,48 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**===============Uncomment below to get the project to show the Screens!!!!.=================================*/
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+
 public class Main extends Application {
-
-    public static String user = null;
-    public static String location = null;
-
-    public static String getLocation() {
-        return location;
-    }
-
-    public static void setLocation(String location) {
-        Main.location = location;
-    }
-
+    ResourceBundle rb = ResourceBundle.getBundle("bundles/language", Locale.getDefault());
+    public static String user;
     public static String getUser() {
         return user;
     }
-
     public static void setUser(String user) {
         Main.user = user;
     }
 
 
+//Uncomment below to skip login screen
 
+//    @Override
+//    public void start(Stage stage) throws Exception {
+//        Parent root = FXMLLoader.load(getClass().getResource("/view/SchedulerScreen.fxml"));
+//
+//        stage.setTitle("Scheduling Management System");
+//        stage.setScene(new Scene(root));
+//        stage.show();
+//    }
 
-
-    @Override
+    /**
+     * This Method transfers and loads to the Login screen.
+     * @param stage
+     * @throws Exception
+     */
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/SchedulerScreen.fxml"));
-
-        stage.setTitle("Scheduling Management System");
+        Parent root = FXMLLoader.load(getClass().getResource("/view/LoginScreen.fxml"));
+        stage.setTitle(rb.getString("SchedulingManagementSystem"));
         stage.setScene(new Scene(root));
         stage.show();
     }
 
-
-
-
-
-
-
-
+    /**
+     * This opens the connection to the JDB database and closes it when exiting.
+     * @param args
+     */
     public static void main(String[] args) {
         JDBC.openConnection();
         launch(args);
@@ -58,89 +58,5 @@ public class Main extends Application {
 
 
 
-        /** Below this are practice examples, delete before submitting!
-         * JDBC practice webinar
-         * Using FruitsQuery helper
-         * INSERT UPDATE DELETE   , SELECT  */
 
-//public class Main {
-//    public static void main(String[] args) throws SQLException {
-////        launch(args);
-//
-//
-//        JDBC.openConnection();
-//
-//
-//
-//
-//        /** Below this are practice examples, delete before submitting!
-//         * JDBC practice webinar
-//         * Using FruitsQuery helper
-//         * INSERT UPDATE DELETE   , SELECT  */
-//
-//
-//        /**=========INSERT==============*/
-//
-////        int rowsAffected = FruitsQuery.insert("Loquat", 2);
-////
-////
-////        if(rowsAffected > 0){
-////            System.out.println("Insert worked!");
-////        }
-////        else {
-////            System.out.println("Insert fail!");
-////
-////        }
-//
-//        /** ============UPDATE ===============*/
-//
-//        int rowsAffected = FruitsQuery.update(14, 3, "Loquats");
-//
-//
-//        if(rowsAffected > 0){
-//            System.out.println("Update worked!");
-//        }
-//        else {
-//            System.out.println("Update fail!");
-//
-//        }
-////
-//
-//
-//        /**======== DELETE==================*/
-//
-////        int rowsAffected = FruitsQuery.delete(9);
-////
-////
-////        if(rowsAffected > 0){
-////            System.out.println("Delete worked!");
-////        }
-////        else {
-////            System.out.println("Delete fail!");
-////
-////        }
-//
-//
-//        /**===== SELECT ==============*/
-//
-////        FruitsQuery.select(3);
-//
-//
-//
-//
-//
-//
-//        /** Above this are practice examples, delete before submitting! */
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//        JDBC.closeConnection();
-//    }
-//}
+

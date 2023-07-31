@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.Main;
 import model.Country;
 import model.Customer;
 import model.FirstLevelDivisions;
@@ -25,6 +26,9 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
+/**
+ * A class to modify the selected customer frm the table and DB.
+ */
 public class ModifyCustomerScreenController implements Initializable {
     private static Customer selectedCustomer;
     Stage stage;
@@ -42,7 +46,8 @@ public class ModifyCustomerScreenController implements Initializable {
 
 
     /**
-     * Setting the 2nd combobox to null ensures a change in country resets the states/divisions.
+     * This method sets the Country combo boxes based on the State/Province country IDs to match their given values. Setting
+     * the 2nd combobox to null ensures a change in country resets the states/divisions.
      * @param event
      * @throws SQLException
      */
@@ -55,7 +60,8 @@ public class ModifyCustomerScreenController implements Initializable {
     }
 
     /**
-     *
+     * This method updates and saves the inputted customer info as long as the fields are properly entered. Any missing info
+     *   or unselected combo boxes will trigger an alert.
      * @param event
      * @throws SQLException
      * @throws IOException
@@ -68,7 +74,7 @@ public class ModifyCustomerScreenController implements Initializable {
         String address = modCustAddressTxt.getText();
         String postalCode = modCustZipTxt.getText();
         String phone = modCustPhoneTxt.getText();
-        String updatedBy = "user"; //////must add a login page
+        String updatedBy = Main.getUser(); //////must add a login page
 
         /**=======================================*/
 
@@ -114,7 +120,7 @@ public class ModifyCustomerScreenController implements Initializable {
     }
 
     /**
-     *
+     * This method leads back to the main menu without saving any info.
      * @param event
      * @throws IOException
      */
@@ -126,14 +132,15 @@ public class ModifyCustomerScreenController implements Initializable {
     }
 
     /**
-     *
-     * @param customer
+     * This method receives the selected customer into a variable to used for receiving the customer info.
+     * @param customer  selected to be modified
      */
     public static void receiveSelectedCustomer(Customer customer) {
     selectedCustomer = customer;
 }
     /**
-     *
+     * This method populates the received customer info into the textfields  as well as for initializing the multiple combobox
+     *   methods called.
      * @param url
      * @param resourceBundle
      */

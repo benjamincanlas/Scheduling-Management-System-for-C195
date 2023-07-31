@@ -49,18 +49,18 @@
             <TextField fx:id="addApptDescTxt" prefHeight="61.0" prefWidth="303.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="addApptLocationTxt" prefHeight="29.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label text="End Date" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-            <DatePicker fx:id="addApptStartDate" onAction="#onStartDate" prefHeight="29.0" prefWidth="219.0" promptText="Select a start date" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <DatePicker fx:id="addApptEndDate" onAction="#onEndDate" promptText="Select an end date" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-            <ComboBox fx:id="addApptTypeCombo" editable="true" onAction="#onTypeCombo" prefHeight="29.0" prefWidth="233.0" promptText="Select type" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ComboBox fx:id="addApptContactIdCombo" editable="true" onAction="#onContactIdCombo" prefHeight="29.0" prefWidth="231.0" promptText="Select a contact" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ComboBox fx:id="addApptCustIdCombo" editable="true" onAction="#onCustIdCombo" prefHeight="29.0" prefWidth="231.0" promptText="Select a customer" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <ComboBox fx:id="addApptUserIdCombo" editable="true" onAction="#onUserIdCombo" prefHeight="29.0" prefWidth="231.0" promptText="Select a user" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <DatePicker fx:id="addApptStartDate" editable="false" onAction="#onStartDate" prefHeight="29.0" prefWidth="219.0" promptText="Select a start date" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <DatePicker fx:id="addApptEndDate" editable="false" onAction="#onEndDate" promptText="Select an end date" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <ComboBox fx:id="addApptTypeCombo" onAction="#onTypeCombo" prefHeight="29.0" prefWidth="233.0" promptText="Select type" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="addApptContactIdCombo" onAction="#onContactIdCombo" prefHeight="29.0" prefWidth="231.0" promptText="Select a contact" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="addApptCustIdCombo" onAction="#onCustIdCombo" prefHeight="29.0" prefWidth="231.0" promptText="Select a customer" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ComboBox fx:id="addApptUserIdCombo" onAction="#onUserIdCombo" prefHeight="29.0" prefWidth="231.0" promptText="Select a user" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             <Label text="Start [Hours: Minutes]" GridPane.rowIndex="9" />
             <Label layoutX="491.0" layoutY="476.0" prefHeight="49.0" prefWidth="126.0" text="End[Hours: Minutes]" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-            <Spinner fx:id="spinnerStartHours" editable="true" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Spinner fx:id="spinnerStartMinutes" editable="true" layoutX="146.0" layoutY="528.0" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
-            <Spinner fx:id="spinnerEndHours" editable="true" layoutX="270.0" layoutY="528.0" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-            <Spinner fx:id="spinnerEndMinutes" editable="true" layoutX="629.0" layoutY="528.0" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+            <Spinner fx:id="startHrsSpin" onMouseClicked="#onStartClickedHrs" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Spinner fx:id="startMinSpin" layoutX="146.0" layoutY="528.0" onMouseClicked="#onStartClickedMin" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+            <Spinner fx:id="endHrsSpin" layoutX="270.0" layoutY="528.0" onMouseClicked="#onEndHrs" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+            <Spinner fx:id="endMinSpin" layoutX="629.0" layoutY="528.0" onMouseClicked="#onEndMin" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
          </children>
       </GridPane>
       <Label layoutX="62.0" layoutY="23.0" prefHeight="43.0" prefWidth="533.0" text="Add Appointment">

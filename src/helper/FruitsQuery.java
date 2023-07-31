@@ -6,9 +6,17 @@ import java.sql.SQLException;
 
 
 
-/**=================== JDBC WEBINAR PRACTICE - REFERENCE ONLY =======================*/
+/**=================== JDBC WEBINAR PRACTICE - REFERENCE ONLY - For use in DAOs =======================*/
 
 public abstract class FruitsQuery {
+
+    /**
+     * Use the Values expression for SQL methods with many variables
+     * @param fruitName
+     * @param colorId
+     * @return
+     * @throws SQLException
+     */
     public static int insert(String fruitName, int colorId) throws SQLException {
         String sql = "INSERT INTO FRUITS (Fruit_Name, Color_ID) VALUES(?, ?)";
         PreparedStatement ps = JDBCold.connection.prepareStatement(sql);

@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginScreenController">
    <children>
       <VBox prefHeight="400.0" prefWidth="107.0" style="-fx-background-color: gray;" />
-      <Text layoutX="249.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Form">
+      <TextField fx:id="userNameTxt" layoutX="256.0" layoutY="131.0" prefHeight="29.0" prefWidth="195.0" />
+      <Button fx:id="loginButton" layoutX="256.0" layoutY="255.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="29.0" prefWidth="107.0" text="Login" />
+      <Button fx:id="resetButton" layoutX="397.0" layoutY="255.0" mnemonicParsing="false" onAction="#onReset" prefHeight="29.0" prefWidth="107.0" text="Reset" />
+      <PasswordField fx:id="passwordTxt" layoutX="256.0" layoutY="184.0" prefHeight="29.0" prefWidth="195.0" />
+      <Label fx:id="zoneID" layoutX="256.0" layoutY="353.0" prefHeight="20.0" prefWidth="244.0" text="zoneID" />
+      <Label fx:id="loginFormLabel" layoutX="266.0" layoutY="41.0" prefHeight="50.0" prefWidth="261.0" text="Login Form">
          <font>
-            <Font name="Arial Bold" size="34.0" />
+            <Font name="System Bold" size="34.0" />
          </font>
-      </Text>
-      <Text layoutX="126.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="128.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="128.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language">
+      </Label>
+      <Label fx:id="usernameLabel" layoutX="130.0" layoutY="133.0" prefHeight="25.0" prefWidth="107.0" text="Username:">
          <font>
             <Font size="16.0" />
          </font>
-      </Text>
-      <TextField layoutX="256.0" layoutY="131.0" prefHeight="29.0" prefWidth="195.0" />
-      <TextField layoutX="256.0" layoutY="195.0" prefHeight="29.0" prefWidth="195.0" />
-      <Button layoutX="256.0" layoutY="255.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="107.0" text="Login" />
-      <Button layoutX="397.0" layoutY="255.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="107.0" text="Reset" />
-      <ComboBox layoutX="256.0" layoutY="312.0" prefWidth="150.0" />
+      </Label>
+      <Label fx:id="passowordLabel" layoutX="130.0" layoutY="187.0" prefHeight="25.0" prefWidth="107.0" text="Password:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="locationLabel" layoutX="138.0" layoutY="350.0" prefHeight="25.0" prefWidth="101.0" text="Location">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

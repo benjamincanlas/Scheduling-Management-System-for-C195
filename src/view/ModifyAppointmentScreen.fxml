@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -42,22 +43,24 @@
             <Label text="Type" GridPane.rowIndex="4" />
             <Label text="Start Date" GridPane.rowIndex="8" />
             <Label text="Customer ID" GridPane.rowIndex="6" />
-            <Label text="Start Time" GridPane.rowIndex="9" />
             <Label text="User ID" GridPane.rowIndex="7" />
             <TextField fx:id="modApptIdTxt" alignment="CENTER" editable="false" prefHeight="29.0" prefWidth="231.0" promptText="Auto-Generated " GridPane.columnIndex="1" />
             <TextField fx:id="modApptTitleTxt" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="modApptDescTxt" prefHeight="61.0" prefWidth="303.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="modApptLocationTxt" prefHeight="29.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label text="End Date" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-            <Label text="End Time" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-            <DatePicker fx:id="modApptStartDate" editable="false" onAction="#onStartDate" prefHeight="29.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <DatePicker fx:id="modApptEndDate" editable="false" onAction="#onEndDate" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-            <ComboBox fx:id="modApptTypeCombo" onAction="#onTypeCombo" prefHeight="29.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ComboBox fx:id="addApptContactIdCombo" onAction="#onContactIdCombo" prefHeight="29.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ComboBox fx:id="modApptCustIdCombo" onAction="#onCustIdCombo" prefHeight="29.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <ComboBox fx:id="modApptUserIdCombo" onAction="#onUserIdCombo" prefHeight="29.0" prefWidth="235.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <ComboBox fx:id="modApptStartTimeCombo" onAction="#onStartTime" prefWidth="138.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <ComboBox fx:id="modApptEndTimeCombo" onAction="#onEndTime" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+            <DatePicker fx:id="modApptStartDate" editable="false" onAction="#onStartDate" prefHeight="29.0" prefWidth="219.0" promptText="Select a start date " GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <DatePicker fx:id="modApptEndDate" editable="false" onAction="#onEndDate" promptText="Select an end date" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <ComboBox fx:id="modApptTypeCombo" onAction="#onTypeCombo" prefHeight="29.0" prefWidth="231.0" promptText="Select type" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="modApptContactIdCombo" onAction="#onContactIdCombo" prefHeight="29.0" prefWidth="232.0" promptText="Select a contact" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="modApptCustIdCombo" onAction="#onCustIdCombo" prefHeight="29.0" prefWidth="231.0" promptText="Select a customer" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ComboBox fx:id="modApptUserIdCombo" onAction="#onUserIdCombo" prefHeight="29.0" prefWidth="235.0" promptText="Select a user" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Start [Hours: Minutes]" GridPane.rowIndex="9" />
+            <Label prefHeight="49.0" prefWidth="126.0" text="End[Hours: Minutes]" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <Spinner fx:id="startHrsSpin" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Spinner fx:id="startMinSpin" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+            <Spinner fx:id="endHrsSpin" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+            <Spinner fx:id="endMinSpin" layoutX="629.0" layoutY="528.0" prefHeight="29.0" prefWidth="107.0" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
          </children>
       </GridPane>
       <Label layoutX="62.0" layoutY="23.0" prefHeight="43.0" prefWidth="533.0" text="Modify Appointment">

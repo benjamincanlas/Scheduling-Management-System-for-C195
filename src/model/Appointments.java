@@ -155,4 +155,21 @@ public class Appointments {
     public String getContactName() throws SQLException {
         return contactDAO.getContact(contactID).getContactName();
     }
+
+
+    private String Type;
+
+    public void appointmentType(String Type){
+        this.Type = Type;
+    }
+
+    /**
+     * @return the appointmentType String type
+     */
+    @Override
+    public String toString(){return Type;}
+
+
+
+
 }
