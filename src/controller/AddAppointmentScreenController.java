@@ -86,6 +86,7 @@ public class AddAppointmentScreenController implements Initializable{
 
     /**
      * Converts LocalDateTime to EST ZoneDateTime for our office hours 0800-2200 called in the officehours check and filters.
+     * Since timezone is EST, must use zone new_york.
      * @param time
      * @return ZoneDateTime EST
      */
@@ -96,20 +97,7 @@ public class AddAppointmentScreenController implements Initializable{
 
 
 
-    /**===
-     *
-     *
-     *         Country country1 = addCustCountryCombo.getValue();
-     *         addCustStateCombo.setItems(FirstLevelDivisionsDAO.getCountryDivisions(country1.getCountryID()));
-     *
-     *
-     *         comboBoxCustomer.setItems(customerDao.getAllCustomers());
-     *         comboBoxUser.setItems(userDao.getAllUsers());
-     *         comboBoxContact.setItems(contactDao.getAllContacts());
-     *
-     *
-     *
-     * */
+
     /**
      * This method sets multiple combo box methods from "type, contactID, customerID, and userID" into one method. Because each
      * method combos have their own SQL DAO controller, except for type, each will have that sql expression called from their

@@ -15,11 +15,9 @@ public class Main extends Application {
     ResourceBundle rb = ResourceBundle.getBundle("bundles/language", Locale.getDefault());
     public static String user;
     public static String getUser() {
-        return user;
-    }
+        return user;}
     public static void setUser(String user) {
-        Main.user = user;
-    }
+        Main.user = user;}
 
 
 //Uncomment below to skip login screen
